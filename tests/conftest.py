@@ -22,5 +22,6 @@ def ordenada_decrescente():
 @pytest.fixture(scope=SESSION)
 def aleatoria():
     return [
-        12, 3, 5, 8, 10, 11, 4, 9, 2, 6, 1, 7
+        12, 3, 5, 8, 10, 11, 4, 9, 2, 6, 1, 7,
+        12, 5, 10, 4, 1, 7, 8, 1, 1
     ]

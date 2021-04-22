@@ -17,17 +17,17 @@ def intercal(p, q, r, vector):
             j -= 1
 
 
-def merge(p, r, vector):
+def merge(vector, p=0, r=None):
+    if r is None:
+        r = len(vector)
+
     if p < r - 1:
         q = int((p + r)/2)
 
-        merge(p, q, vector)
-        merge(q, r, vector)
+        merge(vector, p, q)
+        merge(vector, q, r)
         intercal(p, q, r, vector)
 
     return vector
 
-
-v = [i for i in range(10, -1, -1)]
-print(merge(0, len(v), v))
 

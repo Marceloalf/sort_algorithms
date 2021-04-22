@@ -21,14 +21,13 @@ def separa(p, r, vector):
     return j
 
 
-def quick(p, r, vector):
+def quick(vector, p=0, r=None):
+    if r is None:
+        r = len(vector) - 1
+
     if p < r:
         j = separa(p, r, vector)
-        quick(p, j - 1, vector)
-        quick(j + 1, r, vector)
+        quick(vector, p, j - 1)
+        quick(vector, j + 1, r)
 
     return vector
-
-
-v = [i + 32 for i in range(100, -1, -1)]
-print(quick(0, len(v) - 1, v))

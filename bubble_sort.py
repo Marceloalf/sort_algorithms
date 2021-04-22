@@ -11,7 +11,3 @@ def bubble(vector):
                 vector[i + 1] = aux
 
     return vector
-
-
-v = [i for i in range(10, -1, -1)]
-print(bubble(v))

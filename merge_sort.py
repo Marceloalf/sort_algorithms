@@ -29,5 +29,3 @@ def merge(vector, p=0, r=None):
         intercal(p, q, r, vector)
 
     return vector
-
-

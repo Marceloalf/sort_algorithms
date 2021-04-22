@@ -22,4 +22,3 @@ def heap(vector):
         max_heapfy(vector, 0, i-1)
 
     return vector
-

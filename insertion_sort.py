@@ -10,7 +10,3 @@ def insertion(vector):
         vector[j + 1] = eleito
 
     return vector
-
-
-v = [i for i in range(10, -1, -1)]
-print(insertion(v))

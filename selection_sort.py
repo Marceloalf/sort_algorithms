@@ -13,7 +13,3 @@ def selection_sort(vector):
                 vector[minimal] = aux
 
     return vector
-
-
-v = [i for i in range(10, -1, -1)]
-print(selection_sort(v))

@@ -1,17 +1,20 @@
 def intercala(inicio, meio, fim, vector):
-    esquerda = vector[inicio:meio]  # metade a esquerda do meio
-    direita = vector[meio:fim]  # metade a direita do meio, incluindo
+    w = [0 for i in range(fim - inicio)]
 
-    i, j = 0, 0
-    # i = indice que aponta para posição atual do vetor da esquerda
-    # j = indice que aponta para posição atual do vetor da direita
+    for i in range(inicio, meio):
+        w[i - inicio] = vector[i]
+
+    for j in range(meio, fim):
+        w[fim - inicio + meio - j - 1] = vector[j]
+
+    i, j = 0, fim - inicio - 1
     for k in range(inicio, fim):
-        if i < len(esquerda) and esquerda[i] <= direita[j]:  # elemento da esquerda é menor
-            vector[k] = esquerda[i]
-            i += 1  # incremento da posição atual da esquerda
+        if w[i] <= w[j]:
+            vector[k] = w[i]
+            i += 1
         else:
-            vector[k] = direita[j]  # elemento da direita é menor
-            j += 1  # incremento da posição atual da direita
+            vector[k] = w[j]
+            j -= 1
 
 
 def merge(vector, inicio=0, fim=None):
@@ -26,3 +29,4 @@ def merge(vector, inicio=0, fim=None):
         intercala(inicio, meio, fim, vector)  # junta ambas as partes ordenadas
 
     return vector
+

@@ -20,13 +20,13 @@ def max_heapfy(vetor, pai, tamanho):
 
 
 def heap(vector):
-    n = len(vector) - 1
+    tamaho = len(vector) - 1
 
     # deixa o vetor com as propriedade de um max heap
-    for i in range(n//2, -1, -1):
-        max_heapfy(vector, i, n)
+    for i in range(tamaho//2, -1, -1):
+        max_heapfy(vector, i, tamaho)
 
-    for i in range(n, 0, -1):
+    for i in range(tamaho, 0, -1):
         # para cada elemento do vetor, o maior elemento (indice 0)
         # é colocado ao final, e o elemento do final vai para o inicio
         vector[0], vector[i] = vector[i], vector[0]

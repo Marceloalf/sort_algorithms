@@ -19,5 +19,7 @@ Os algoritmos foram separados nos Arquivos
 Para executá-los pode ser criado um vetor em cada
 arquivo individualmente e em seguida chamar a função
 de sorteamento em cada arquivo, as mesmas foram
-referenciadas com o nome das funções.
+referenciadas com o nome das funções. Em cada arquivo
+foi adicionado um comentário com instruções de como
+usar a função de sorteamendo.
 -------------------//-------------------

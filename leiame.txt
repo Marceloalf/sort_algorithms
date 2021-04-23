@@ -1,0 +1,23 @@
+-------------------//-------------------
+Os códigos desenvolvidos neste trabalho foram
+adaptados das anotações realizadas durante a
+disciplina de estrutura de dados.
+
+Foi utilizado a linguagem python para implementá-los
+-------------------//-------------------
+Recomenda-se o uso de uma IDE como pycharm ou
+VScode para auxiliar a execução do código
+-------------------//-------------------
+Os algoritmos foram separados nos Arquivos
+    bubble_sort
+    insertion_sort
+    selection_sort
+    merge_sort
+    quick_sort
+    heap_sort
+
+Para executá-los pode ser criado um vetor em cada
+arquivo individualmente e em seguida chamar a função
+de sorteamento em cada arquivo, as mesmas foram
+referenciadas com o nome das funções.
+-------------------//-------------------

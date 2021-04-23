@@ -1,4 +1,35 @@
+"""
+merge_sort.py
+Author: Luan Rodrigues, Marcelo Augusto
+
+Conjunto de funções para implementar o algoritmo de ordenação
+MergeSort em Python.
+
+Para maiores intruções sobre as funções, veja as docstrings de cada função
+separada.
+------
+Uso:
+------
+>>> from merge_sort import merge
+>>> vetor_desordenado = [5, 1, 2, 10, 4]
+>>> vetor_ordenado = merge(x)
+>>> print(vetor_ordenado)
+[1, 2, 4, 5, 10]
+"""
+
+
 def intercala(inicio, meio, fim, vector):
+    """
+    Função que intercala dois vetores previamente ordenados e junta ambos
+    em um único vetor de forma ordenada.
+
+    Args:
+        inicio: Índice do início do vetor a ser ordenado.
+        meio: Índice delimitando o meio do vetor onde separa direita e esquerda
+            para serem intercalados.
+        fim: Índice do fim do vetor a ser ordenado
+        vector: Iterável para ser ordenado.
+    """
     w = [0 for i in range(fim - inicio)]
 
     for i in range(inicio, meio):
@@ -30,6 +61,18 @@ def intercala(inicio, meio, fim, vector):
 
 
 def merge(vector, inicio=0, fim=None):
+    """
+    Função principal do merge sort que ordenado um vetor de elementos
+    comparáveis entre si.
+
+    Args:
+        vector: Iterável para ser ordenado.
+        inicio: Índice do início do vetor a ser ordenado.
+        fim: Índice do fim do vetor a ser ordenado
+
+    Returns:
+        - Iterável com os elementos ordenados.
+    """
     if fim is None:
         fim = len(vector)
 

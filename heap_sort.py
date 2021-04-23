@@ -1,7 +1,32 @@
+"""
+heap_sort.py
+Author: Luan Rodrigues, Marcelo Augusto
+
+Conjunto de funções para implementar o algoritmo de ordenação
+HeapSort em Python.
+
+Para maiores intruções sobre as funções, veja as docstrings de cada função
+separada.
+------
+Uso:
+------
+>>> from heap_sort import heap
+>>> vetor_desordenado = [5, 1, 2, 10, 4]
+>>> vetor_ordenado = heap(x)
+>>> print(vetor_ordenado)
+[1, 2, 4, 5, 10]
+"""
+
+
 def max_heapfy(vetor, pai, tamanho):
     """
     Organiza o vetor como uma arvore onde a raiz é
     maior do que ambos os filhos a esquerda e a direita
+
+    Args:
+        vetor: Iterável para ser ordenado.
+        pai: Índice da raiz da árvore.
+        tamanho: Tamanho do vetor para ser aplicado a propriedade.
     """
     filho_esquerda = pai * 2 + 1
     # calculo para indice do filho à esquerda
@@ -23,6 +48,16 @@ def max_heapfy(vetor, pai, tamanho):
 
 
 def heap(vector):
+    """
+    Função principal do heap sort que ordenado um vetor de elementos
+    comparáveis entre si.
+
+    Args:
+        vector: Iterável para ser ordenado.
+
+    Returns:
+        - Iterável com os elementos ordenados.
+    """
     tamaho = len(vector) - 1
 
     # deixa o vetor com as propriedade de um max heap

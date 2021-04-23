@@ -1,8 +1,36 @@
+"""
+quick_sort.py
+Author: Luan Rodrigues, Marcelo Augusto
+
+Conjunto de funções para implementar o algoritmo de ordenação
+QuickSort em Python.
+
+Para maiores intruções sobre as funções, veja as docstrings de cada função
+separada.
+------
+Uso:
+------
+>>> from quick_sort import quick
+>>> vetor_desordenado = [5, 1, 2, 10, 4]
+>>> vetor_ordenado = quick(vetor_desordenado)
+>>> print(vetor_ordenado)
+[1, 2, 4, 5, 10]
+"""
+
+
 def separa(inicio, fim, vector):
     """
     Seprar o vetor de modo que o dado um índice J, todos os elemetos
     a direita são maiores todos a esquerda são menores. Ao final é retornado
-    o índice com essas propriedades
+    o índice com essas propriedades.
+
+    Args:
+        inicio: Ínidice do ínicio do vetor para aplicar a propriedade.
+        fim: Índice do fim do vetor para aplicar a propriedade.
+        vector: Iterável para ser ordenado.
+
+    Returns:
+        - int: Índice do pivô.
     """
     pivo = vector[inicio]
     i = inicio + 1
@@ -43,6 +71,17 @@ def separa(inicio, fim, vector):
 
 
 def quick(vector, inicio=0, fim=None):
+    """
+    Função principal do quick sort.
+
+    Args:
+        vector: Iterável para ser ordenado.
+        inicio: Índice do início do vetor a ser ordenado.
+        fim: Índice do fim do vetor a ser ordenado.
+
+    Returns:
+        - Iterável com os itens do `vetor` ordenado.
+    """
     if fim is None:
         fim = len(vector) - 1
 

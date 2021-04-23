@@ -5,27 +5,35 @@ def separa(inicio, fim, vector):
     o índice com essas propriedades
     """
     pivo = vector[inicio]
-    i = inicio + 1  # ponteiro para os elementos menores do que o pivô
-    j = fim  # ponteiro para os elementos maiores do que o pivô
+    i = inicio + 1
+    # i = ponteiro para os elementos menores do que o pivô
+    j = fim
+    # j = ponteiro para os elementos maiores do que o pivô
 
-    while i <= j:  # enquanto ainda puder existir algum menor ou maior
+    while i <= j:
+        # enquanto ainda puder existir algum menor ou maior
+
         if vector[i] <= pivo:
-            # move o ponteiro dos menores para posição seguinte até achar um maior
+            # move o ponteiro dos menores para posição
+            # seguinte até achar um maior
             i += 1
         elif pivo < vector[j]:
-            # move o ponteiro dos maiores para posição seguinte até achar um menor
+            # move o ponteiro dos maiores para posição
+            # seguinte até achar um menor
             j -= 1
         else:
-            # ambos ponteiros, menor e maior encontraram um elemento do lado do vetor
-            # errado, portanto deve-se trocar:
+            # ambos ponteiros, menor e maior encontraram um
+            # elemento do lado do vetor errado,
+            # portanto deve-se trocar:
             #   o elememento maior (indicador por i) deve ir para direita
             #   o elemento menor (indicado por j) deve ir para esquerda
             aux = vector[i]
             vector[i] = vector[j]
             vector[j] = aux
 
-    # após seperar os elementos menores para esquerda, e os maiores para a direita
-    # é trocado o pivo com a posicao do meio, dessa forma o pivo já está na posicao correta
+    # após seperar os elementos menores para esquerda, e os
+    # maiores para a direita é trocado o pivo com a posicao do meio,
+    # dessa forma o pivo já está na posicao correta
     aux = vector[inicio]
     vector[inicio] = vector[j]
     vector[j] = aux
@@ -39,8 +47,8 @@ def quick(vector, inicio=0, fim=None):
         fim = len(vector) - 1
 
     if inicio < fim:
-        pivo = separa(inicio, fim, vector)
-        quick(vector, inicio, pivo - 1)
-        quick(vector, pivo + 1, fim)
+        pivo = separa(inicio, fim, vector)  # separad em 2
+        quick(vector, inicio, pivo - 1)  # lado esquerdo
+        quick(vector, pivo + 1, fim)  # lado direito
 
     return vector

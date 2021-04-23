@@ -1,10 +1,13 @@
 def max_heapfy(vetor, pai, tamanho):
     """
-    Organiza o vetor como uma arvore onde a raiz é maior do que ambos os filhos
-    a esquerda e a direita
+    Organiza o vetor como uma arvore onde a raiz é
+    maior do que ambos os filhos a esquerda e a direita
     """
-    filho_esquerda = pai * 2 + 1  # calculo para indice do filho à esquerda
-    filho_direita = pai * 2 + 2  # calculo para indice do filho à direita
+    filho_esquerda = pai * 2 + 1
+    # calculo para indice do filho à esquerda
+
+    filho_direita = pai * 2 + 2
+    # calculo para indice do filho à direita
 
     if filho_esquerda <= tamanho and vetor[filho_esquerda] > vetor[pai]:
         # se o filho à erquerda maior do que a atual raiz, devem ser invertidos

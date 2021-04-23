@@ -1,18 +1,23 @@
 def intercala(inicio, meio, fim, vector):
     w = [0 for i in range(fim - inicio)]
 
-    for i in range(inicio, meio):
+    for i in range(inicio, meio):  # adiciona os dados da esquerda ao vetor aux
         w[i - inicio] = vector[i]
 
-    for j in range(meio, fim):
+    for j in range(meio, fim):  # adiciona os dados da direita ao vetor aux
         w[fim - inicio + meio - j - 1] = vector[j]
 
-    i, j = 0, fim - inicio - 1
-    for k in range(inicio, fim):
+    i, j = 0, fim - inicio - 1  # ponteiros para marca posicoes da esquerda e direita
+    # i = ponteiro para posicao do lado esquerdo
+    # j = ponteiro para posicao do lado direito
+
+    for k in range(inicio, fim):  # loop em todos os itens para juntar esquerda + direita
         if w[i] <= w[j]:
+            # se o atual da esquerda for o menor, então adiciona ao vetor
             vector[k] = w[i]
             i += 1
         else:
+            # se o atual da direita for o menor, então adiciona ao vetor
             vector[k] = w[j]
             j -= 1
 

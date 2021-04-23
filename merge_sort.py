@@ -1,31 +1,28 @@
-def intercal(p, q, r, vector):
-    w = [0 for i in range(r - p)]
+def intercala(inicio, meio, fim, vector):
+    esquerda = vector[inicio:meio]  # metade a esquerda do meio
+    direita = vector[meio:fim]  # metade a direita do meio, incluindo
 
-    for i in range(p, q):
-        w[i - p] = vector[i]
-
-    for j in range(q, r):
-        w[r - p + q - j - 1] = vector[j]
-
-    i, j = 0, r - p - 1
-    for k in range(p, r):
-        if w[i] <= w[j]:
-            vector[k] = w[i]
-            i += 1
+    i, j = 0, 0
+    # i = indice que aponta para posição atual do vetor da esquerda
+    # j = indice que aponta para posição atual do vetor da direita
+    for k in range(inicio, fim):
+        if i < len(esquerda) and esquerda[i] <= direita[j]:  # elemento da esquerda é menor
+            vector[k] = esquerda[i]
+            i += 1  # incremento da posição atual da esquerda
         else:
-            vector[k] = w[j]
-            j -= 1
+            vector[k] = direita[j]  # elemento da direita é menor
+            j += 1  # incremento da posição atual da direita
 
 
-def merge(vector, p=0, r=None):
-    if r is None:
-        r = len(vector)
+def merge(vector, inicio=0, fim=None):
+    if fim is None:
+        fim = len(vector)
 
-    if p < r - 1:
-        q = int((p + r)/2)
+    if inicio < fim - 1:
+        meio = (inicio + fim) // 2  # divide o vetor em duas partes iguais
 
-        merge(vector, p, q)
-        merge(vector, q, r)
-        intercal(p, q, r, vector)
+        merge(vector, inicio, meio)  # ordena recusivamente a metadre da esquerda
+        merge(vector, meio, fim)  # ordena recurvivamente a metade da direita
+        intercala(inicio, meio, fim, vector)  # junta ambas as partes ordenadas
 
     return vector
